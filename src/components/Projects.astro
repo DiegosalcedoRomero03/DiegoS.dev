@@ -1,0 +1,25 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { projects } from '../data/projects';
+---
+
+<div id="projects" class="relative min-h-screen px-32 py-2 flex flex-col justify-center items-center gap-2 bg-transparent z-10">
+    <div class="w-full max-w-300 flex flex-col gap-12 mt-18">
+        <h1 class="text-6xl font-bold text-center mt-6">PROJECTS</h1>
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
+            {projects.map((project) => (
+                <ProjectCard {...project} />
+            ))}
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .project-description {
+        font-size: 0.90rem;
+        margin-top: 0.75rem;
+        color: #94a3b8;
+        line-height: 1.7;
+    }
+</style>

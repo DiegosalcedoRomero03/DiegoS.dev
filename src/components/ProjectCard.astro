@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+
+const { title, description, image, tags } = Astro.props;
+---
+
+<article class="relative overflow-hidden min-h-[350px] border border-solid border-border-purple-mezcla rounded-3xl project">
+    <Image class="w-full h-[200px] object-cover rounded-lg block" src={image} alt={title} />
+
+    <div class="pt-6 pb-6 pl-4 pr-4 ml-4">
+        <h3 class="text-base font-bold text-[700] text-mist-100">{title}</h3>
+        <p class="mt-3 text-sm leading-[1.7] text-gray-400/70  project-description">{description}</p>
+
+        <div class="m-2 ml-0 flex flex-wrap gap-3">
+            {tags.map((tag: string) => (
+                <span class="text-xs text-center p-2 bg-blue-600/10 border border-blue-600/30 rounded-lg text-white/80">{tag}</span>
+            ))}
+        </div>
+    </div>
+</article>
+
+<style>
+    .project {
+        background: linear-gradient(
+            180deg, 
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03)
+        );
+
+        backdrop-filter: blur(10px);
+
+        transition:
+            transform 0.35s ease,
+            border-color 0.35s ease,
+            box-shadow 0.35s ease;
+    }
+
+    /* .project::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        opacity: 0;
+        background: radial-gradient(
+            circle at top left,
+            rgba(100, 44, 234, 0.45),
+            transparent 19%
+        );
+        transition: opacity 1.2s ease;
+        pointer-events: none;
+    } */
+
+    /* .project:hover {
+        transform: translateY(-8px);
+        border-color: rgba(96, 165, 240, 0.45);
+        box-shadow:
+            0 24px 80px rgba(37, 99, 235, 0.16),
+            0 12px 40px rgba(37, 99, 235, 0.12);
+    } */
+
+    .project:hover::before {
+        opacity: 1;
+    }
+
+    .project-title {
+        font-size: clamp(1.5rem, 4vh, 2.5rem);
+        font-weight: 800;
+        text-align: center;
+        letter-spacing: -0.06em;
+
+        background: linear-gradient(
+            90deg,
+            #ffffff 0%,
+            #8b5cf6 35%,
+            #2563eb 70%,
+            #60a5fa 100%
+        );
+
+        background-clip: text;
+        -webkit-background-clip: text;
+
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+
+</style>

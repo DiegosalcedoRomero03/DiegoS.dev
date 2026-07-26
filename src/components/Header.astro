@@ -1,0 +1,78 @@
+<header id="header">
+    <div>
+        <h1 class="header-title">Diego Salcedo <span class="green-point-online"></span></h1>
+        <p>Software Development</p>
+    </div>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About me</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<style>
+    header {
+        position: fixed;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: min(800px, calc(100% - 2rem));
+        z-index: 9999;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5rem;
+        border: 1px solid rgba(23, 60, 100, 0.651);
+        border-radius: 10px;
+
+        box-sizing: border-box;
+
+        animation: blur-header linear both;
+        animation-timeline: scroll();
+        padding: 0.2rem 2rem;
+    }
+
+    @keyframes blur-header {
+        from {
+            backdrop-filter: blur(0px);
+            background: transparent;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        to {
+            border: 1px solid rgba(23, 60, 100, 0.651);
+            backdrop-filter: blur(10px);
+            background: rgba(2, 6, 22, .6)
+        }
+    }
+
+    .header-title {
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+        gap: 2rem;
+
+        padding: 0.75rem 1.5rem;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .green-point-online {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #10b981;
+        border-radius: 50%;
+        margin-left: 0.5rem;
+    }
+</style>

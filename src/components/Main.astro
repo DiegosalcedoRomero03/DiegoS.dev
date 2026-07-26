@@ -1,0 +1,63 @@
+---
+import Header from "./Header.astro"
+import Hero from "./Hero.astro"
+import ParticleBackground from "./ParticleBackground.astro"
+import Projects from "./Projects.astro"
+import AboutMe from "./AboutMe.astro"
+import Footer from "./Footer.astro"
+---
+
+<section class="main-section">
+    <span id="home"></span>
+    <section class="image-background">
+        <Header />
+        <Hero />
+    </section>
+    <section class="content-background">
+        <section class="projects-section">
+            <Projects />
+            <ParticleBackground />
+        </section>
+        <section>
+            <AboutMe />
+        </section>
+        <section>
+            <Footer />
+        </section>
+    </section>
+    <section class="main-projects-section">
+    <!-- seccion para proyectos -->
+        <div class="particle-background">
+        </div>
+    </section>
+</section>
+
+<style>
+
+    .image-background {
+        min-height: 100vh;
+        background-image: url('/images/hero-bg.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        z-index: 0;
+    }
+
+    .content-background {
+        position: relative;
+        background:
+        radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.20), transparent 32%),
+        radial-gradient(circle at 85% 10%, rgba(37, 99, 235, 0.18), transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(96, 165, 250, 0.10), transparent 35%),
+        #020617;
+    }
+
+    .projects-section {
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden;
+        background: #020617;
+    }
+
+</style>

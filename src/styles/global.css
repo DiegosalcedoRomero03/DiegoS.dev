@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+    --color-border-purple-mezcla: rgba(139, 92, 246, 0.22);
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* .montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0f172a;
+    color: white;
+    font-family: 'Noto Sans', 'Pliant', sans-serif;
+}

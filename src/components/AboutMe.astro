@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+
+import heroImage from '../assets/hero-bg.png';
+---
+
+<div id="about">
+    <div>
+        <p>
+            Hola, soy Diego Salcedo, desarrollador de software junior de Colombia apasionado por crear aplicaciones web. En un futuro cercano también quiero desarrollar videojuegos indie.
+            <br><br>
+            Estoy en busqueda de una oportunidad para seguir creciendo como desarrollador y aportar mis conocimientos y valores.
+            <br><br>
+
+            Me considero una persona disciplinada, curiosa y responsable, disfruto aprender cosas nuevas y jugar fútbol.
+        </p>
+    </div>
+    <div>
+        <Image src={heroImage} alt="Imagen de perfil" />
+    </div>
+</div>
+
+<style>
+    #about {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        min-height: 100vh;
+        margin: 0 auto;
+
+        background: transparent;
+    }
+
+    p {
+        max-width: 600px;
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+
+    img {
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        border: 1px solid rgba(96, 165, 250, 0.35);
+        box-shadow:
+            0 0 80px rgba(37, 99, 235, 0.25),
+            0 0 40px rgba(124, 58, 237, 0.18);
+    }
+</style>

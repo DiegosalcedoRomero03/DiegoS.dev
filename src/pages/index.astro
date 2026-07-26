@@ -1,5 +1,6 @@
 ---
-
+import "../styles/global.css"
+import Main from "../components/Main.astro"
 ---
 
 <html lang="en">
@@ -7,11 +8,14 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pliant:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Main />
 	</body>
 </html>
