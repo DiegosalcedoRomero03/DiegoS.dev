@@ -4,7 +4,11 @@
 npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```sh
+npm run dev
+```
+
+> 🌟 **Incredible website**
 
 ## 🚀 Project Structure
 
