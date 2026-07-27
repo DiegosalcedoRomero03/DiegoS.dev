@@ -1,52 +1,127 @@
 ---
-import { Image } from 'astro:assets';
-
-import heroImage from '../assets/hero-bg.png';
+import { Image } from "astro:assets";
+import heroImage from "../assets/hero-bg.png";
 ---
 
-<div id="about">
-    <div>
-        <p>
-            Hola, soy Diego Salcedo, desarrollador de software junior de Colombia apasionado por crear aplicaciones web. En un futuro cercano también quiero desarrollar videojuegos indie.
-            <br><br>
-            Estoy en busqueda de una oportunidad para seguir creciendo como desarrollador y aportar mis conocimientos y valores.
-            <br><br>
+<section
+    id="about"
+    class="relative z-10 overflow-hidden px-4 py-24"
+>
+    <div class="mx-auto w-full max-w-6xl">
+        <div class="mb-12 text-center">
+            <span
+                class="
+                    text-xs font-semibold uppercase
+                    tracking-[0.35em]
+                    text-blue-300
+                "
+            >
+                Get to know me
+            </span>
 
-            Me considero una persona disciplinada, curiosa y responsable, disfruto aprender cosas nuevas y jugar fútbol.
-        </p>
+            <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">
+                About me
+            </h2>
+
+            <p class="mx-auto mt-3 max-w-2xl text-slate-400">
+                A little about my background, interests, and what I am looking
+                for as a software developer.
+            </p>
+        </div>
+
+        <div
+            class="
+                grid items-center gap-12
+                rounded-3xl
+                border border-violet-400/15
+                bg-slate-950/70
+                px-6 py-10
+                md:grid-cols-[1.4fr_0.6fr]
+                md:px-12
+            "
+        >
+            <div>
+                <h3 class="text-2xl font-bold text-slate-100">
+                    Hi, I’m Diego Salcedo
+                </h3>
+
+                <div class="mt-5 space-y-5 text-base leading-8 text-slate-400">
+                    <p>
+                        I’m a junior software developer from Colombia,
+                        passionate about building web applications that solve
+                        real problems and improve everyday processes.
+                    </p>
+
+                    <p>
+                        I’m currently looking for an opportunity where I can
+                        continue growing as a developer, contribute my
+                        knowledge, and learn from an experienced team.
+                    </p>
+
+                    <p>
+                        I consider myself disciplined, curious, and
+                        responsible. Outside of development, I enjoy learning
+                        new things, playing football, and exploring the idea of
+                        building indie video games in the future.
+                    </p>
+                </div>
+
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <span class="about-tag">Disciplined</span>
+                    <span class="about-tag">Curious</span>
+                    <span class="about-tag">Responsible</span>
+                    <span class="about-tag">Continuous learner</span>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <div class="profile-image relative">
+                    <Image
+                        src={heroImage}
+                        alt="Portrait of Diego Salcedo"
+                        class="
+                            h-56 w-56
+                            rounded-full
+                            object-cover
+                            md:h-64 md:w-64
+                        "
+                    />
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <Image src={heroImage} alt="Imagen de perfil" />
-    </div>
-</div>
+</section>
 
 <style>
-    #about {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        min-height: 100vh;
-        margin: 0 auto;
-
-        background: transparent;
+    .profile-image::before {
+        content: "";
+        position: absolute;
+        inset: -12px;
+        z-index: -1;
+        border-radius: 9999px;
+        background: linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.45),
+            rgba(37, 99, 235, 0.3)
+        );
+        filter: blur(22px);
+        opacity: 0.65;
     }
 
-    p {
-        max-width: 600px;
-        font-size: 1.5rem;
-        font-weight: 300;
-        line-height: 1.5;
-    }
-
-    img {
-        width: 250px;
-        height: 250px;
-        border-radius: 100%;
-        border: 1px solid rgba(96, 165, 250, 0.35);
+    .profile-image img {
+        border: 1px solid rgba(167, 139, 250, 0.35);
         box-shadow:
-            0 0 80px rgba(37, 99, 235, 0.25),
-            0 0 40px rgba(124, 58, 237, 0.18);
+            0 20px 50px rgba(2, 6, 23, 0.5),
+            0 0 30px rgba(139, 92, 246, 0.12);
+    }
+
+    .about-tag {
+        border: 1px solid rgba(167, 139, 250, 0.2);
+        border-radius: 0.5rem;
+        background: rgba(139, 92, 246, 0.08);
+        padding: 0.375rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: oklch(80.9% 0.105 251.813);
     }
 </style>

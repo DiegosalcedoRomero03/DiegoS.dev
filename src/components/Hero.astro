@@ -1,60 +1,85 @@
-<div class="hero">
-    <div class="hero-content">
-        <p class="hero-intro"><span class="hero-intro-span">Hola, soy Diego</span>👋</p>
+<section class="portfolio-hero">
+    <div class="portfolio-hero__glow portfolio-hero__glow--left"></div>
+    <div class="portfolio-hero__glow portfolio-hero__glow--right"></div>
 
-        <h1 class="hero-description">
-            Building software <br>
-            and <span class="span-gradient-two">digital experiences</span>
-        </h1>
-
-        <p>
-            Building software that simplifies processes
-            and improves productivity.
+    <div class="portfolio-hero__content">
+        <p class="portfolio-hero__eyebrow">
+            Hi, I’m Diego 👋
         </p>
 
-        <div class="hero-button-container">
-            <button class="hero-button hero-button-a hero-button-projects">
-                View Projects &lt;/&gt;
-            </button>
-            <button class="hero-button hero-button-b">
-                About me
-            </button>
+        <h1 class="portfolio-hero__title">
+            Building software
+            <span>that solves real problems.</span>
+        </h1>
+
+        <p class="portfolio-hero__text">
+            I’m a junior software developer focused on building web
+            applications that simplify processes, improve productivity,
+            and deliver useful digital experiences.
+        </p>
+
+        <div class="portfolio-hero__buttons">
+            <a
+                href="#projects"
+                class="portfolio-hero__button portfolio-hero__button--primary"
+            >
+                View Projects
+                <span aria-hidden="true">&lt;/&gt;</span>
+            </a>
+
+            <a
+                href="#about"
+                class="portfolio-hero__button portfolio-hero__button--secondary"
+            >
+                About Me
+                <span aria-hidden="true">→</span>
+            </a>
         </div>
 
+        <div class="portfolio-hero__status">
+            <span class="portfolio-hero__status-dot"></span>
+
+            <span>
+                Junior Software Developer · Based in Colombia
+            </span>
+        </div>
     </div>
-</div>
+</section>
 
 <style>
-    .hero {
+    .portfolio-hero {
         position: relative;
-        top: 20rem;
-        margin-left: 4rem;
-    }
-
-    .hero-content {
-        max-width: 700px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .hero-button-container {
-        min-width: 250px;
         display: flex;
         align-items: center;
-        gap: 1rem;
+
+        min-height: 100vh;
+        overflow: hidden;
+
+        padding: 8rem 1rem 5rem;
+        background: transparent;
     }
 
-    .hero-intro {
-        font-size: 2rem;
+    .portfolio-hero__content {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        max-width: 72rem;
+        margin: 0 auto;
     }
 
-    .hero-intro-span {
+    .portfolio-hero__eyebrow {
+        margin: 0 0 1.25rem;
+
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+
         background: linear-gradient(
             90deg,
-            #7c3aed,
-            #2563eb
+            #c4b5fd,
+            #60a5fa
         );
 
         background-clip: text;
@@ -62,21 +87,29 @@
 
         color: transparent;
         -webkit-text-fill-color: transparent;
-
     }
 
-    .hero-description {
-        font-size: 3.5rem;
-        font-weight: 700;
+    .portfolio-hero__title {
+        max-width: 900px;
+        margin: 0;
+
+        font-size: clamp(3rem, 7vw, 5.8rem);
+        font-weight: 800;
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+
+        color: #f8fafc;
     }
 
-    .span-gradient-two {
+    .portfolio-hero__title span {
+        display: block;
+
         background: linear-gradient(
             90deg,
-            #7c3aed 0%,
-            #8b5cf6 20%,
-            #4f46e5 40%,
-            #2563eb 70%,
+            #a78bfa 0%,
+            #8b5cf6 30%,
+            #4f46e5 55%,
+            #2563eb 78%,
             #60a5fa 100%
         );
 
@@ -87,27 +120,156 @@
         -webkit-text-fill-color: transparent;
     }
 
-    .hero-button {
-        padding: 1rem 1.5rem;
-        font-size: 1.2rem;
-        color: #cbd5e1;
-        background: #0b0d1c;
+    .portfolio-hero__text {
+        max-width: 680px;
+        margin: 1.75rem 0 0;
 
-        border: none;
-        border-radius: 10px;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        font-weight: 400;
+        line-height: 1.8;
+
+        color: #94a3b8;
     }
 
-    .hero-button-b {
-        border: 1px solid #2e2e2e;
+    .portfolio-hero__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        margin-top: 2rem;
     }
 
-    .hero-button-projects {
+    .portfolio-hero__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65rem;
+
+        min-height: 52px;
+        padding: 0.85rem 1.4rem;
+
+        border-radius: 0.75rem;
+
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease,
+            background-color 0.25s ease;
+    }
+
+    .portfolio-hero__button--primary {
+        color: #ffffff;
+        border: 1px solid rgba(167, 139, 250, 0.35);
+
         background: linear-gradient(
             90deg,
-            #472be6,
+            #6d28d9,
+            #4f46e5,
             #2563eb
         );
+
+        box-shadow:
+            0 10px 30px rgba(79, 70, 229, 0.22),
+            0 0 25px rgba(139, 92, 246, 0.12);
     }
 
-    .hero
+    .portfolio-hero__button--primary:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 16px 40px rgba(79, 70, 229, 0.3),
+            0 0 35px rgba(139, 92, 246, 0.18);
+    }
+
+    .portfolio-hero__button--secondary {
+        color: #cbd5e1;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        background: rgba(15, 23, 42, 0.65);
+    }
+
+    .portfolio-hero__button--secondary:hover {
+        transform: translateY(-3px);
+        border-color: rgba(167, 139, 250, 0.4);
+        background: rgba(30, 41, 59, 0.85);
+    }
+
+    .portfolio-hero__status {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+
+        margin-top: 2rem;
+
+        font-size: 0.85rem;
+        color: #64748b;
+    }
+
+    .portfolio-hero__status-dot {
+        width: 0.55rem;
+        height: 0.55rem;
+
+        flex-shrink: 0;
+
+        border-radius: 9999px;
+        background: #22c55e;
+
+        box-shadow: 0 0 14px rgba(34, 197, 94, 0.6);
+    }
+
+    .portfolio-hero__glow {
+        position: absolute;
+        pointer-events: none;
+
+        border-radius: 9999px;
+        filter: blur(90px);
+    }
+
+    .portfolio-hero__glow--left {
+        top: 15%;
+        left: -12%;
+
+        width: 30rem;
+        height: 30rem;
+
+        background: rgba(124, 58, 237, 0.12);
+    }
+
+    .portfolio-hero__glow--right {
+        right: -10%;
+        bottom: 8%;
+
+        width: 26rem;
+        height: 26rem;
+
+        background: rgba(37, 99, 235, 0.1);
+    }
+
+    @media (max-width: 640px) {
+        .portfolio-hero {
+            min-height: auto;
+            padding-top: 9rem;
+            padding-bottom: 6rem;
+        }
+
+        .portfolio-hero__title {
+            line-height: 1.05;
+        }
+
+        .portfolio-hero__buttons {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .portfolio-hero__button {
+            width: 100%;
+        }
+
+        .portfolio-hero__status {
+            align-items: flex-start;
+        }
+    }
 </style>

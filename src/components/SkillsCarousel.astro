@@ -1,0 +1,103 @@
+---
+import { skills } from "../data/skills";
+import { Image } from "astro:assets";
+---
+
+<section
+    id="skills"
+    class="relative overflow-hidden py-20"
+>
+    <div
+        class="
+            pointer-events-none
+            absolute left-1/2 top-1/2
+            h-52 w-[700px]
+            -translate-x-1/2 -translate-y-1/2
+            rounded-full
+            bg-violet-600/10
+            blur-3xl
+        "
+    ></div>
+
+    <div class="relative mx-auto w-full max-w-6xl px-4">
+        <div class="mb-10 text-center">
+            <span
+                class="
+                    text-xs font-semibold uppercase
+                    tracking-[0.35em]
+                    text-blue-300
+                "
+            >
+                Tech stack
+            </span>
+
+            <h2 class="mt-3 text-3xl font-bold text-white">
+                Technologies I work with
+            </h2>
+
+            <p class="mx-auto mt-3 max-w-2xl text-slate-400">
+                Tools and technologies I use to build modern web applications.
+            </p>
+        </div>
+
+        <div class="overflow-hidden">
+            <div class="skills-track flex w-max gap-6">
+                {
+                    [...skills, ...skills].map((skill) => (
+                        <article
+                            class="
+                                flex min-w-[150px] flex-col
+                                items-center justify-center gap-3
+                                rounded-2xl
+                                border border-blue-400/20
+                                bg-slate-900
+                                px-6 py-5
+                                transition-all duration-300
+                                hover:-translate-y-1
+                                hover:border-violet-400/50
+                                hover:bg-slate-800
+                                hover:shadow-[0_0_24px_rgba(139,92,246,0.14)]
+                            "
+                        >
+                            <Image
+                                src={skill.icon}
+                                alt={skill.description}
+                                class="h-9 w-9 object-contain"
+                            />
+
+                            <span class="font-medium text-slate-100">
+                                {skill.name}
+                            </span>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .skills-track {
+        animation: scroll-skills 25s linear infinite;
+    }
+
+    .skills-track:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes scroll-skills {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .skills-track {
+            animation: none;
+        }
+    }
+</style>
