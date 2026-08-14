@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css"
 import Main from "../components/Main.astro"
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <html lang="en">
@@ -16,6 +17,7 @@ import Main from "../components/Main.astro"
 		<title>Diego Salcedo | Developer</title>
 	</head>
 	<body>
+		<Analytics />
 		<Main />
 	</body>
 </html>
