@@ -19,6 +19,8 @@ export const experience = [
             "Developed and maintained modules using PHP and JavaScript.",
             "Created and optimized SQL quieries in MySQL.",
             "Improved PDF generation and reporting features.",
+            "Supported financial modules and administrative processes for the platform.",
+            "Collaborated with the team to enhance user experience and interface design.",
             "Fixed bugs and implemented new funcionality."
         ],
         technologies: [

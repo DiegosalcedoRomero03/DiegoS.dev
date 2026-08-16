@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from "../assets/hero-bg.png";
+import fotoPerfil from "../assets/foto-perfil.jpg";
+import { ParticleBackground } from "@diegosalcedoromero/particle-background";
 ---
 
 <section
@@ -31,6 +32,7 @@ import heroImage from "../assets/hero-bg.png";
 
         <div
             class="
+                relative
                 grid items-center gap-12
                 rounded-3xl
                 border border-violet-400/15
@@ -40,7 +42,11 @@ import heroImage from "../assets/hero-bg.png";
                 md:px-12
             "
         >
-            <div>
+        <ParticleBackground 
+                    particleCount={40}
+                    connectionColor="#8ec5ff"
+                />
+            <div class="relative">
                 <h3 class="text-2xl font-bold text-slate-100">
                     Hi, I’m Diego Salcedo
                 </h3>
@@ -77,7 +83,7 @@ import heroImage from "../assets/hero-bg.png";
             <div class="flex justify-center">
                 <div class="profile-image relative">
                     <Image
-                        src={heroImage}
+                        src={fotoPerfil}
                         alt="Portrait of Diego Salcedo"
                         class="
                             h-56 w-56
