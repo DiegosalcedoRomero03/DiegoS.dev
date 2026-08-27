@@ -16,6 +16,13 @@ import Analytics from '@vercel/analytics/astro'
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Diego Salcedo | Developer</title>
+		<script is:inline>
+			(function () {
+				var stored = localStorage.getItem("theme");
+				var theme = stored === "light" ? "light" : "dark";
+				document.documentElement.setAttribute("data-theme", theme);
+			})();
+		</script>
 	</head>
 	<body>
 		<Analytics />

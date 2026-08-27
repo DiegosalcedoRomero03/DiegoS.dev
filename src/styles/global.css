@@ -4,6 +4,83 @@
     --color-border-purple-mezcla: rgba(139, 92, 246, 0.22);
 }
 
+:root {
+    /* superficies */
+    --rgb-bg-deep: 2 6 23;        /* #020617 */
+    --rgb-bg-base: 15 23 42;      /* #0f172a */
+    --rgb-bg-elevated: 30 41 59;  /* #1e293b */
+
+    /* texto */
+    --rgb-text-primary: 248 250 252;   /* #f8fafc */
+    --rgb-text-secondary: 148 163 184; /* #94a3b8 */
+    --rgb-text-muted: 100 116 139;     /* #64748b */
+    --rgb-text-nav: 203 213 225;       /* #cbd5e1 */
+
+    /* acento */
+    --rgb-accent-blue: 147 197 253;        /* #93c5fd */
+    --rgb-accent-blue-strong: 96 165 250;  /* #60a5fa */
+    --rgb-accent-purple: 167 139 250;      /* #a78bfa */
+    --rgb-accent-purple-strong: 139 92 246;/* #8b5cf6 */
+    --rgb-accent-purple-light: 221 214 254;/* #ddd6fe */
+    --rgb-success: 34 197 94;              /* #22c55e */
+
+    /* bordes neutrales */
+    --rgb-border-gray: 148 163 184;        /* #94a3b8 */
+
+    /* acento profundo (glows y gradientes) */
+    --rgb-accent-purple-deep: 124 58 237;  /* #7c3aed */
+    --rgb-accent-blue-deep: 37 99 235;     /* #2563eb */
+
+    /* utilitarios */
+    --rgb-highlight: 255 255 255;
+    --rgb-text-on-accent: 255 255 255;
+
+    /* opacidad de los glows decorativos (Main, Hero) */
+    --opacity-glow-1: 0.18;
+    --opacity-glow-2: 0.15;
+    --opacity-glow-3: 0.08;
+    --opacity-glow-hero-1: 0.12;
+    --opacity-glow-hero-2: 0.1;
+}
+
+:root[data-theme="light"] {
+    /* superficies */
+    --rgb-bg-deep: 255 255 255;      /* #ffffff */
+    --rgb-bg-base: 248 250 252;      /* #f8fafc */
+    --rgb-bg-elevated: 226 232 240;  /* #e2e8f0 */
+
+    /* texto */
+    --rgb-text-primary: 15 23 42;    /* #0f172a */
+    --rgb-text-secondary: 71 85 105; /* #475569 */
+    --rgb-text-muted: 100 116 139;   /* #64748b */
+    --rgb-text-nav: 51 65 85;        /* #334155 */
+
+    /* acento */
+    --rgb-accent-blue: 37 99 235;         /* #2563eb */
+    --rgb-accent-blue-strong: 29 78 216;  /* #1d4ed8 */
+    --rgb-accent-purple: 124 58 237;      /* #7c3aed */
+    --rgb-accent-purple-strong: 109 40 217;/* #6d28d9 */
+    --rgb-accent-purple-light: 91 33 182; /* #5b21b6 */
+    --rgb-success: 22 163 74;             /* #16a34a */
+
+    /* bordes neutrales */
+    --rgb-border-gray: 100 116 139;       /* #64748b */
+
+    /* acento profundo (glows y gradientes) */
+    --rgb-accent-purple-deep: 109 40 217;
+    --rgb-accent-blue-deep: 29 78 216;
+
+    /* utilitarios */
+    --rgb-highlight: 15 23 42;
+
+    /* opacidad de los glows decorativos (Main, Hero) */
+    --opacity-glow-1: 0.08;
+    --opacity-glow-2: 0.06;
+    --opacity-glow-3: 0.05;
+    --opacity-glow-hero-1: 0.05;
+    --opacity-glow-hero-2: 0.04;
+}
+
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -19,7 +96,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #0f172a;
-    color: white;
+    background-color: rgb(var(--rgb-bg-base));
+    color: rgb(var(--rgb-text-primary));
     font-family: 'Noto Sans', 'Pliant', sans-serif;
 }

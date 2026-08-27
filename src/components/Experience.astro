@@ -15,17 +15,17 @@ import { experience } from "../data/experience";
                     font-semibold
                     uppercase
                     tracking-[0.35em]
-                    text-blue-300
+                    text-[rgb(var(--rgb-accent-blue))]
                 "
             >
                 Professional journey
             </span>
 
-            <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">
+            <h2 class="mt-3 text-3xl font-bold text-[rgb(var(--rgb-text-primary))] md:text-4xl">
                 Experience
             </h2>
 
-            <p class="mx-auto mt-3 max-w-2xl text-slate-400">
+            <p class="mx-auto mt-3 max-w-2xl text-[rgb(var(--rgb-text-secondary))]">
                 My professional experience developing business software,
                 web applications, and custom solutions.
             </p>
@@ -133,8 +133,8 @@ import { experience } from "../data/experience";
 
     background:
     linear-gradient(
-        #60a5fa,
-        rgba(96,165,250,.15)
+        rgb(var(--rgb-accent-blue-strong)),
+        rgb(var(--rgb-accent-blue-strong) / 0.15)
     );
 
 }
@@ -162,7 +162,7 @@ import { experience } from "../data/experience";
 
     font-weight:600;
 
-    color:#60a5fa;
+    color:rgb(var(--rgb-accent-blue-strong));
 
     padding-top:.4rem;
 }
@@ -173,14 +173,14 @@ import { experience } from "../data/experience";
 
     border-radius:50%;
 
-    background:#60a5fa;
+    background:rgb(var(--rgb-accent-blue-strong));
 
     margin-top:.4rem;
 
     box-shadow:
 
     0 0 18px
-    rgba(96,165,250,.7);
+    rgb(var(--rgb-accent-blue-strong) / 0.7);
 }
 .experience-card{
 
@@ -189,10 +189,10 @@ import { experience } from "../data/experience";
     border-radius:1.5rem;
 
     border:1px solid
-    rgba(167,139,250,.15);
+    rgb(var(--rgb-accent-purple) / 0.15);
 
     background:
-    rgba(15,23,42,.7);
+    rgb(var(--rgb-bg-base) / 0.7);
 
     transition:.3s;
 }
@@ -201,7 +201,7 @@ import { experience } from "../data/experience";
     transform:translateY(-5px);
 
     border-color:
-    rgba(96,165,250,.3);
+    rgb(var(--rgb-accent-blue-strong) / 0.3);
 
 }
 .experience-header{
@@ -218,11 +218,11 @@ import { experience } from "../data/experience";
 
     margin-top:.3rem;
 
-    color:#60a5fa;
+    color:rgb(var(--rgb-accent-blue-strong));
 }
 .location{
 
-    color:#64748b;
+    color:rgb(var(--rgb-text-muted));
 
     font-size:.85rem;
 }
@@ -230,7 +230,7 @@ import { experience } from "../data/experience";
 
     margin-top:1.3rem;
 
-    color:#94a3b8;
+    color:rgb(var(--rgb-text-secondary));
 
     line-height:1.8;
 }
@@ -244,7 +244,7 @@ ul{
 
     gap:.75rem;
 
-    color:#cbd5e1;
+    color:rgb(var(--rgb-text-nav));
 }
 .tech-list{
 
@@ -266,13 +266,13 @@ ul{
     border-radius:.6rem;
 
     background:
-    rgba(139,92,246,.08);
+    rgb(var(--rgb-accent-purple-strong) / 0.08);
 
     border:
     1px solid
-    rgba(167,139,250,.2);
+    rgb(var(--rgb-accent-purple) / 0.2);
 
-    color:#8ec5ff;
+    color:rgb(var(--rgb-accent-blue));
 
     font-size:.75rem;
 }

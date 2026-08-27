@@ -1,5 +1,5 @@
 import hero from "../assets/hero-bg.png";
-import particles from "../assets/particles-background.png";
+import particles from "../assets/perfil_particles.png";
 import guaca from "../assets/perfil_la_guaca.png";
 
 export const projects = [
@@ -18,8 +18,7 @@ export const projects = [
         tags: ["PHP", "MVC", "OOP", "Composer", "MySQL", "JavaScript", "DataTables"],
         image: guaca,
         web: "https://laguacasahagun.com/",
-        github: ""
-
+        github: "https://github.com/DiegosalcedoRomero03/laguacainventario"
     },
     // {
     //     title: "Vehicle Inspection Management System",
