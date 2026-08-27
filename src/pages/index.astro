@@ -2,20 +2,70 @@
 import "../styles/global.css"
 import Main from "../components/Main.astro"
 import Analytics from '@vercel/analytics/astro'
+import ogImageSource from "../assets/foto-perfil.jpg"
 
+const siteTitle = "Diego Salcedo | Software Developer & Desarrollador Web"
+const siteDescription = "Diego Salcedo — Junior Software Developer / Desarrollador de software y desarrollador web en Colombia. PHP, JavaScript, TypeScript, Astro. Explora mis proyectos y experiencia."
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
+const ogImageUrl = new URL(ogImageSource.src, Astro.site)
+
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Diego Salcedo",
+	"alternateName": "Diego Andrés Salcedo Romero",
+	"url": Astro.site?.toString(),
+	"image": ogImageUrl.href,
+	"jobTitle": "Software Developer",
+	"description": siteDescription,
+	"email": "mailto:professionaldiegos@gmail.com",
+	"address": {
+		"@type": "PostalAddress",
+		"addressCountry": "CO"
+	},
+	"sameAs": [
+		"https://github.com/DiegosalcedoRomero03",
+		"https://www.linkedin.com/in/diego-andr%C3%A9s-salcedo-romero-9579b026a/",
+		"https://www.npmjs.com/~diegosalcedoromero"
+	]
+}
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pliant:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Diego Salcedo | Developer</title>
+
+		<title>{siteTitle}</title>
+		<meta name="description" content={siteDescription} />
+		<meta name="keywords" content="Diego Salcedo, desarrollador de software, desarrollador web, software developer, web developer, portfolio, PHP developer, JavaScript developer, Astro developer" />
+		<meta name="author" content="Diego Salcedo" />
+		<link rel="canonical" href={canonicalUrl} />
+		<meta name="theme-color" content="#7c3aed" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Diego Salcedo" />
+		<meta property="og:title" content={siteTitle} />
+		<meta property="og:description" content={siteDescription} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale:alternate" content="es_CO" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={siteTitle} />
+		<meta name="twitter:description" content={siteDescription} />
+		<meta name="twitter:image" content={ogImageUrl} />
+
+		<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
 		<script is:inline>
 			(function () {
 				var stored = localStorage.getItem("theme");
